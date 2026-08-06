@@ -71,6 +71,11 @@ get_version() {
 
 cd netbird-core
 
+if ! grep -q 'github.com/netbird-awg/wireguard-go' go.mod; then
+  echo "The pinned NetBird core does not contain the reviewed AWG adapter." >&2
+  exit 1
+fi
+
 version=$(get_version "${1:-}")
 echo "Using version: $version"
 
@@ -81,6 +86,7 @@ if [ "$tvos" = true ]; then
 
   gomobile-netbird bind \
     -target=ios,iossimulator,tvos,tvossimulator \
+    -tags=hybrid_awg \
     -bundleid=io.netbird.framework \
     -ldflags="-X github.com/netbirdio/netbird/version.version=$version" \
     -o "$app_path/NetBirdSDK.xcframework" \
@@ -91,6 +97,7 @@ else
 
   gomobile bind \
     -target=ios,iossimulator \
+    -tags=hybrid_awg \
     -bundleid=io.netbird.framework \
     -ldflags="-X github.com/netbirdio/netbird/version.version=$version" \
     -o "$app_path/NetBirdSDK.xcframework" \

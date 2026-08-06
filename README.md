@@ -34,9 +34,11 @@
 
  <br>
 
-# NetBird iOS & tvOS Client
+# netbird-awg iOS & tvOS Client
 
-The NetBird iOS/tvOS client allows connections from mobile devices running iOS 14.0+ and Apple TV running tvOS 17.0+ to private resources in the NetBird network.
+The netbird-awg iOS/tvOS client supports NetBird networks that automatically
+negotiate standard WireGuard or Hybrid AmneziaWG per peer. It falls back to
+standard WireGuard when the remote peer does not support AWG.
 
 ## Install
 You can download and install the app from the App Store:
@@ -53,7 +55,9 @@ You can download and install the app from the App Store:
 
 ## Code structure
 The code is divided into 4 parts:
-- The main netbird Go code, included as a git submodule at `/netbird-core` from the [NetBird](https://github.com/netbirdio/netbird) repo, compiled into an xcframework. This contains most of the client logic.
+- The AWG-enabled NetBird Go code, included as a git submodule at
+  `/netbird-core` from [netbird-awg/netbird](https://github.com/netbird-awg/netbird),
+  compiled into an XCFramework with the `hybrid_awg` build tag.
 - The network extension `/NetbirdNetworkExtension` that is running in the background where the compiled Go code is executed.
 - The UI and app code under `/NetBird`
 - The `/NetbirdKit/NetworkExtensionAdapter` that controls the extension and builds the link between UI and extension
@@ -87,7 +91,7 @@ go install github.com/netbirdio/gomobile-tvos-fork/cmd/gomobile-netbird@latest
 The main netbird Go code is included as a git submodule at `netbird-core/`.
 
 ```bash
-git clone --recursive https://github.com/netbirdio/ios-client.git
+git clone --recursive https://github.com/netbird-awg/ios-client.git
 cd ios-client
 ```
 
@@ -100,6 +104,9 @@ Build the XCFramework for iOS:
 ```bash
 ./build-go-lib.sh
 ```
+
+The installed iOS/tvOS application display name and release archive name use
+`netbird-awg`.
 
 Or for tvOS (includes iOS, iOS Simulator, tvOS, and tvOS Simulator targets):
 ```bash

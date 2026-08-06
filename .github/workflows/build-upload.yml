@@ -53,8 +53,7 @@ jobs:
         if: inputs.netbird-ref != ''
         working-directory: ios-client/netbird-core
         run: |
-          git remote add fork https://github.com/evgeniyChepelev/netbird.git 2>/dev/null || true
-          git fetch fork -- "${{ inputs.netbird-ref }}" 2>/dev/null || git fetch origin -- "${{ inputs.netbird-ref }}"
+          git fetch origin -- "${{ inputs.netbird-ref }}"
           git checkout FETCH_HEAD
 
       - name: Fetch netbird tags
@@ -280,7 +279,7 @@ jobs:
             -project NetBird.xcodeproj \
             -scheme NetBird \
             -destination 'generic/platform=iOS' \
-            -archivePath $RUNNER_TEMP/NetBird.xcarchive \
+            -archivePath $RUNNER_TEMP/netbird-awg.xcarchive \
             -allowProvisioningUpdates \
             -authenticationKeyPath ~/".appstoreconnect/private_keys/AuthKey_${API_KEY_ID}.p8" \
             -authenticationKeyID "$API_KEY_ID" \
@@ -296,7 +295,7 @@ jobs:
           API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
         run: |
           xcodebuild -exportArchive \
-            -archivePath $RUNNER_TEMP/NetBird.xcarchive \
+            -archivePath $RUNNER_TEMP/netbird-awg.xcarchive \
             -exportOptionsPlist ExportOptions.plist \
             -exportPath $RUNNER_TEMP/export \
             -authenticationKeyPath ~/".appstoreconnect/private_keys/AuthKey_${API_KEY_ID}.p8" \
