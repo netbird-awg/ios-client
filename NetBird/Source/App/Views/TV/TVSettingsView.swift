@@ -36,7 +36,7 @@ struct TVSettingsView: View {
                             TVSettingsRow(
                                 icon: "server.rack",
                                 title: "Change Server",
-                                subtitle: "Switch to a different NetBird server",
+                                subtitle: "Switch to a different Netibird-AWG server",
                                 action: { viewModel.showChangeServerAlert = true }
                             )
                         }
@@ -685,5 +685,4 @@ struct TVSettingsView_Previews: PreviewProvider {
 }
 
 #endif
-
 

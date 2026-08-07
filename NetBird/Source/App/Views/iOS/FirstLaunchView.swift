@@ -42,7 +42,7 @@ struct FirstLaunchView: View {
 
     private var onboardingText: some View {
         let attributed: AttributedString = {
-            let fullText = "By default you will connect to NetBird's cloud servers. Visit the Change server menu to use another server."
+            let fullText = "By default you will connect to the configured Netibird-AWG server. Visit Change Server to use another server."
             var result = AttributedString(fullText)
             result.font = .system(size: 17)
             result.foregroundColor = Color("TextPrimary")

@@ -64,7 +64,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             let error = NSError(
                 domain: "io.netbird.NetBirdTVNetworkExtension",
                 code: 1003,
-                userInfo: [NSLocalizedDescriptionKey: "Failed to initialize NetBird adapter."]
+                userInfo: [NSLocalizedDescriptionKey: "Failed to initialize Netibird-AWG adapter."]
             )
             completionHandler(error)
             return

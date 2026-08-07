@@ -120,7 +120,7 @@ struct ServerView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 22, height: 22)
-                        Text("Use NetBird server")
+                        Text("Use Netibird-AWG server")
                         Spacer()
                     }
                 }

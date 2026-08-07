@@ -4,7 +4,7 @@ import WidgetKit
 
 @available(iOS 18.0, *)
 struct SetVPNStateIntent: SetValueIntent {
-    static var title: LocalizedStringResource = "Set NetBird VPN State"
+    static var title: LocalizedStringResource = "Set Netibird-AWG VPN State"
     static var openAppWhenRun: Bool = false
 
     @Parameter(title: "Connect")

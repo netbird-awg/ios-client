@@ -22,7 +22,7 @@ struct VPNOnDemandView: View {
     var body: some View {
         Form {
             Section {
-                Text("Use VPN On Demand to automatically connect NetBird on this iPhone.")
+                Text("Use VPN On Demand to automatically connect Netibird-AWG on this iPhone.")
                     .font(.footnote)
                     .foregroundColor(Color("TextSecondary"))
 
@@ -205,17 +205,17 @@ struct VPNOnDemandView: View {
 
         switch viewModel.onDemandWiFiPolicy {
         case .always:
-            parts.append("NetBird will connect whenever this iPhone joins any Wi-Fi network")
+            parts.append("Netibird-AWG will connect whenever this iPhone joins any Wi-Fi network")
         case .onlyOn:
             if viewModel.onDemandWiFiNetworks.isEmpty {
-                parts.append("NetBird will not connect on Wi-Fi until you add networks to the list")
+                parts.append("Netibird-AWG will not connect on Wi-Fi until you add networks to the list")
             } else {
-                parts.append("NetBird will connect when this iPhone joins any of the Wi-Fi networks specified below")
+                parts.append("Netibird-AWG will connect when this iPhone joins any of the Wi-Fi networks specified below")
             }
         case .exceptOn:
-            parts.append("NetBird will connect on Wi-Fi, except on the networks listed below")
+            parts.append("Netibird-AWG will connect on Wi-Fi, except on the networks listed below")
         case .never:
-            parts.append("NetBird will disconnect when this iPhone uses Wi-Fi")
+            parts.append("Netibird-AWG will disconnect when this iPhone uses Wi-Fi")
         case .doNothing:
             break
         }
@@ -223,13 +223,13 @@ struct VPNOnDemandView: View {
         switch viewModel.onDemandCellularPolicy {
         case .always:
             if parts.isEmpty {
-                parts.append("NetBird will connect whenever this iPhone uses cellular data")
+                parts.append("Netibird-AWG will connect whenever this iPhone uses cellular data")
             } else {
                 parts.append("It will also connect whenever this iPhone uses cellular data")
             }
         case .never:
             if parts.isEmpty {
-                parts.append("NetBird will disconnect when this iPhone uses cellular data")
+                parts.append("Netibird-AWG will disconnect when this iPhone uses cellular data")
             } else {
                 parts.append("It will disconnect when using cellular data")
             }
@@ -238,7 +238,7 @@ struct VPNOnDemandView: View {
         }
 
         if parts.isEmpty {
-            return "NetBird won't automatically connect or disconnect."
+            return "Netibird-AWG won't automatically connect or disconnect."
         }
         return parts.joined(separator: ". ") + "."
     }

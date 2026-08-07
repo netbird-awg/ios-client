@@ -209,7 +209,7 @@ struct TVNoNetworksView: View {
                 .font(.system(size: 44, weight: .bold))
                 .foregroundColor(TVColors.textPrimary)
 
-            Text("Connect to NetBird to see available networks,\nor configure network routes in your NetBird admin.")
+            Text("Connect to Netibird-AWG to see available networks,\nor configure network routes in your Netibird-AWG admin.")
                 .font(.system(size: 32))
                 .foregroundColor(TVColors.textSecondary)
                 .multilineTextAlignment(.center)
@@ -247,5 +247,4 @@ struct TVNetworksView_Previews: PreviewProvider {
 }
 
 #endif
-
 

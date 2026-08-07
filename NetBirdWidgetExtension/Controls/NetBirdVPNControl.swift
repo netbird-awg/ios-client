@@ -15,11 +15,11 @@ struct NetBirdVPNControl: ControlWidget {
                 isOn: state.isActive,
                 action: SetVPNStateIntent()
             ) { 
-                Label("NetBird VPN", image: "netbird-logo")
+                Label("Netibird-AWG VPN", image: "netbird-logo")
             }
             .tint(Color(red: 0xF6/255, green: 0x83/255, blue: 0x30/255))
         }
-        .displayName("NetBird VPN")
-        .description("Connect or disconnect NetBird VPN from Control Center.")
+        .displayName("Netibird-AWG VPN")
+        .description("Connect or disconnect Netibird-AWG VPN from Control Center.")
     }
 }
