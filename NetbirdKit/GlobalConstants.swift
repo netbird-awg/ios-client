@@ -7,9 +7,9 @@
 
 struct GlobalConstants {
     #if os(tvOS)
-    static let userPreferencesSuiteName = "group.io.netbird-awg.client.tv"
+    static let userPreferencesSuiteName = "group.io.netbird.awg.client.tv"
     #else
-    static let userPreferencesSuiteName = "group.io.netbird-awg.client"
+    static let userPreferencesSuiteName = "group.io.netbird.awg.client"
     #endif
 
     static let keyForceRelayConnection = "isConnectionForceRelayed"

@@ -10,7 +10,7 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.io.netbird-awg.client</string>
+		<string>group.io.netbird.awg.client</string>
 	</array>
 </dict>
 </plist>

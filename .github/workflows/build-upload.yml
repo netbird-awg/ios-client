@@ -136,7 +136,7 @@ jobs:
             <key>API_KEY</key><string>dummy</string>
             <key>GCM_SENDER_ID</key><string>dummy</string>
             <key>PLIST_VERSION</key><string>1</string>
-            <key>BUNDLE_ID</key><string>io.netbird-awg.client</string>
+            <key>BUNDLE_ID</key><string>io.netbird.awg.client</string>
             <key>PROJECT_ID</key><string>dummy</string>
             <key>STORAGE_BUCKET</key><string>dummy</string>
             <key>IS_ADS_ENABLED</key><false/>
@@ -251,11 +251,11 @@ jobs:
             <true/>
             <key>provisioningProfiles</key>
             <dict>
-              <key>io.netbird-awg.client</key>
+              <key>io.netbird.awg.client</key>
               <string>${APP_PROFILE_NAME}</string>
-              <key>io.netbird-awg.client.NetbirdNetworkExtension</key>
+              <key>io.netbird.awg.client.NetbirdNetworkExtension</key>
               <string>${EXT_PROFILE_NAME}</string>
-              <key>io.netbird-awg.client.NetBirdWidgetExtension</key>
+              <key>io.netbird.awg.client.NetBirdWidgetExtension</key>
               <string>${WIDGET_PROFILE_NAME}</string>
             </dict>
           </dict>

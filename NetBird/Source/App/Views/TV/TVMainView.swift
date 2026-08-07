@@ -19,7 +19,7 @@ import os
 
 #if os(tvOS)
 
-private let buttonLogger = Logger(subsystem: "io.netbird-awg.client", category: "TVConnectionButton")
+private let buttonLogger = Logger(subsystem: "io.netbird.awg.client", category: "TVConnectionButton")
 
 struct TVMainView: View {
     @EnvironmentObject var viewModel: ViewModel

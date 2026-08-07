@@ -1,7 +1,7 @@
 import Foundation
 
 enum WidgetConstants {
-    static let appGroupSuite = "group.io.netbird-awg.client"
+    static let appGroupSuite = "group.io.netbird.awg.client"
     static let deepLinkConnect = URL(string: "netibird-awg://connect")
     static let deepLinkDisconnect = URL(string: "netibird-awg://disconnect")
     static let deepLinkLogin = URL(string: "netibird-awg://login")

@@ -1266,7 +1266,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird-awg.client.tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird.awg.client.tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -1303,7 +1303,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 0.1.6;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird-awg.client.tv";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird.awg.client.tv";
 				PRODUCT_NAME = "Netibird-AWG";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
@@ -1346,7 +1346,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 0.1.6;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird-awg.client.tv";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird.awg.client.tv";
 				PRODUCT_NAME = "Netibird-AWG";
 				SDKROOT = appletvos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -1383,7 +1383,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird-awg.client.tv.extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird.awg.client.tv.extension";
 				PRODUCT_NAME = "Netibird-AWG-TV-NetworkExtension";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
@@ -1420,7 +1420,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird-awg.client.tv.extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird.awg.client.tv.extension";
 				PRODUCT_NAME = "Netibird-AWG-TV-NetworkExtension";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -1454,7 +1454,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 0.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird-awg.client.NetbirdNetworkExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird.awg.client.NetbirdNetworkExtension";
 				PRODUCT_NAME = "Netibird-AWG-NetworkExtension";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -1486,7 +1486,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 0.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird-awg.client.NetbirdNetworkExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird.awg.client.NetbirdNetworkExtension";
 				PRODUCT_NAME = "Netibird-AWG-NetworkExtension";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -1648,7 +1648,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 0.1.6;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird-awg.client";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird.awg.client";
 				PRODUCT_NAME = "Netibird-AWG";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1695,7 +1695,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 0.1.6;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird-awg.client";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird.awg.client";
 				PRODUCT_NAME = "Netibird-AWG";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1734,7 +1734,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 0.1.6;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird-awg.client.NetBirdWidgetExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird.awg.client.NetBirdWidgetExtension";
 				PRODUCT_NAME = "Netibird-AWG-Widget";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -1772,7 +1772,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 0.1.6;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird-awg.client.NetBirdWidgetExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird.awg.client.NetBirdWidgetExtension";
 				PRODUCT_NAME = "Netibird-AWG-Widget";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -1799,7 +1799,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird-awg.client.tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird.awg.client.tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;

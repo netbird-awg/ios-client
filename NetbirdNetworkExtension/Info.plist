@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>FirebaseAppGroup</key>
-	<string>group.io.netbird-awg.client</string>
+	<string>group.io.netbird.awg.client</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionPointIdentifier</key>

@@ -8,7 +8,7 @@
     </array>
     <key>com.apple.security.application-groups</key>
     <array>
-        <string>group.io.netbird-awg.client.tv</string>
+        <string>group.io.netbird.awg.client.tv</string>
     </array>
 </dict>
 </plist>
