@@ -3,6 +3,7 @@ name: Build
 on:
   push:
     branches: [main]
+    tags: ["v*"]
   pull_request:
     branches: [main]
 
@@ -10,7 +11,7 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 permissions:
-  contents: read
+  contents: write
 jobs:
   build_ios:
     name: Build iOS App
@@ -107,49 +108,88 @@ jobs:
         run: |
           xcodebuild -resolvePackageDependencies \
             -project NetBird.xcodeproj \
-            -scheme NetBird
+            -scheme NetBird \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData-ios"
 
       - name: Build iOS App
         working-directory: ios-client
         run: |
           set -o pipefail
+          VERSION_ARGS=()
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+            VERSION_ARGS=("MARKETING_VERSION=${VERSION%%-*}" "CURRENT_PROJECT_VERSION=${GITHUB_RUN_NUMBER}")
+          fi
           xcodebuild build \
             -project NetBird.xcodeproj \
             -scheme NetBird \
             -destination 'generic/platform=iOS' \
             -configuration Debug \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData-ios" \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY="" \
+            "${VERSION_ARGS[@]}" \
             | xcpretty --color
 
       - name: Build Network Extension
         working-directory: ios-client
         run: |
           set -o pipefail
+          VERSION_ARGS=()
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+            VERSION_ARGS=("MARKETING_VERSION=${VERSION%%-*}" "CURRENT_PROJECT_VERSION=${GITHUB_RUN_NUMBER}")
+          fi
           xcodebuild build \
             -project NetBird.xcodeproj \
             -scheme NetbirdNetworkExtension \
             -destination 'generic/platform=iOS' \
             -configuration Debug \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData-ios" \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY="" \
+            "${VERSION_ARGS[@]}" \
             | xcpretty --color
 
       - name: Build Widget Extension
         working-directory: ios-client
         run: |
           set -o pipefail
+          VERSION_ARGS=()
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+            VERSION_ARGS=("MARKETING_VERSION=${VERSION%%-*}" "CURRENT_PROJECT_VERSION=${GITHUB_RUN_NUMBER}")
+          fi
           xcodebuild build \
             -project NetBird.xcodeproj \
             -scheme NetBirdWidgetExtensionExtension \
             -destination 'generic/platform=iOS' \
             -configuration Debug \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData-ios" \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY="" \
+            "${VERSION_ARGS[@]}" \
             | xcpretty --color
+
+      - name: Package unsigned iOS app
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          APP="$RUNNER_TEMP/DerivedData-ios/Build/Products/Debug-iphoneos/Netibird-AWG.app"
+          test -d "$APP"
+          ditto -c -k --sequesterRsrc --keepParent \
+            "$APP" \
+            "$RUNNER_TEMP/netibird-awg-ios-${GITHUB_REF_NAME}-unsigned.zip"
+
+      - name: Upload unsigned iOS app
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: actions/upload-artifact@v4
+        with:
+          name: netibird-awg-ios
+          path: ${{ runner.temp }}/netibird-awg-ios-${{ github.ref_name }}-unsigned.zip
+          if-no-files-found: error
 
   build_tvos:
     name: Build tvOS App
@@ -250,34 +290,91 @@ jobs:
             -project NetBird.xcodeproj \
             -scheme "NetBird TV" \
             -destination 'generic/platform=tvOS' \
-            -derivedDataPath $RUNNER_TEMP/DerivedData-tvos
+            -derivedDataPath "$RUNNER_TEMP/DerivedData-tvos"
 
       - name: Build tvOS App
         working-directory: ios-client
         run: |
           set -o pipefail
+          VERSION_ARGS=()
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+            VERSION_ARGS=("MARKETING_VERSION=${VERSION%%-*}" "CURRENT_PROJECT_VERSION=${GITHUB_RUN_NUMBER}")
+          fi
           xcodebuild build \
             -project NetBird.xcodeproj \
             -scheme "NetBird TV" \
             -destination 'generic/platform=tvOS' \
             -configuration Debug \
-            -derivedDataPath $RUNNER_TEMP/DerivedData-tvos \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData-tvos" \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY="" \
+            "${VERSION_ARGS[@]}" \
             | xcpretty --color
 
       - name: Build tvOS Network Extension
         working-directory: ios-client
         run: |
           set -o pipefail
+          VERSION_ARGS=()
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+            VERSION_ARGS=("MARKETING_VERSION=${VERSION%%-*}" "CURRENT_PROJECT_VERSION=${GITHUB_RUN_NUMBER}")
+          fi
           xcodebuild build \
             -project NetBird.xcodeproj \
             -scheme "NetBirdTVNetworkExtension" \
             -destination 'generic/platform=tvOS' \
             -configuration Debug \
-            -derivedDataPath $RUNNER_TEMP/DerivedData-tvos \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData-tvos" \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY="" \
+            "${VERSION_ARGS[@]}" \
             | xcpretty --color
+
+      - name: Package unsigned tvOS app
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          APP="$RUNNER_TEMP/DerivedData-tvos/Build/Products/Debug-appletvos/Netibird-AWG.app"
+          test -d "$APP"
+          ditto -c -k --sequesterRsrc --keepParent \
+            "$APP" \
+            "$RUNNER_TEMP/netibird-awg-tvos-${GITHUB_REF_NAME}-unsigned.zip"
+
+      - name: Upload unsigned tvOS app
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: actions/upload-artifact@v4
+        with:
+          name: netibird-awg-tvos
+          path: ${{ runner.temp }}/netibird-awg-tvos-${{ github.ref_name }}-unsigned.zip
+          if-no-files-found: error
+
+  github_release:
+    name: Publish GitHub prerelease
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [build_ios, build_tvos]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download client artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: netibird-awg-*
+          path: release-assets
+          merge-multiple: true
+
+      - name: Publish unsigned Apple clients
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Netibird-AWG Apple clients ${{ github.ref_name }}
+          prerelease: true
+          generate_release_notes: true
+          body: |
+            AWG-enabled unsigned iOS and tvOS device builds.
+
+            Apple signing credentials are not stored in this repository.
+            Re-sign these app bundles with the matching App IDs, App Groups,
+            and provisioning profiles before installing them on physical devices.
+          files: release-assets/*

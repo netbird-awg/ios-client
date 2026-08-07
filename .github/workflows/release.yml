@@ -11,6 +11,7 @@ permissions:
 jobs:
   prepare:
     name: Parse tag version
+    if: github.repository == 'netbirdio/ios-client' || vars.ENABLE_APP_STORE_RELEASE == 'true'
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.parse.outputs.version }}
