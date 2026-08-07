@@ -51,7 +51,7 @@ struct SafariView: UIViewControllerRepresentable {
             // ASWebAuthenticationSession intercepts that navigation before the browser
             // follows it, so "http" works as a callback scheme in practice.
             // A proper long-term fix requires the SDK to expose a custom-scheme
-            // redirect URI (e.g. "netbird://") for mobile OAuth flows.
+            // redirect URI (e.g. "netibird-awg://") for mobile OAuth flows.
             let completionHandler: ASWebAuthenticationSession.CompletionHandler = { [weak self] callbackURL, error in
                 guard let self else { return }
 

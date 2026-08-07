@@ -58,7 +58,7 @@ enum VPNDisplayState {
 @MainActor
 class ViewModel: ObservableObject {
 
-    private let logger = Logger(subsystem: "io.netbird.app", category: "ViewModel")
+    private let logger = Logger(subsystem: "io.netbird-awg.client", category: "ViewModel")
 
     // VPN Adapter (shared)
     @Published var networkExtensionAdapter: NetworkExtensionAdapter

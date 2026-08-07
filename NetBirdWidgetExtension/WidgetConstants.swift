@@ -1,10 +1,10 @@
 import Foundation
 
 enum WidgetConstants {
-    static let appGroupSuite = "group.io.netbird.app"
-    static let deepLinkConnect = URL(string: "netbird://connect")
-    static let deepLinkDisconnect = URL(string: "netbird://disconnect")
-    static let deepLinkLogin = URL(string: "netbird://login")
+    static let appGroupSuite = "group.io.netbird-awg.client"
+    static let deepLinkConnect = URL(string: "netibird-awg://connect")
+    static let deepLinkDisconnect = URL(string: "netibird-awg://disconnect")
+    static let deepLinkLogin = URL(string: "netibird-awg://login")
 
     // UserDefaults keys (must match GlobalConstants in NetbirdKit)
     static let keyVPNStatus = "netbird.widget.vpnStatus"

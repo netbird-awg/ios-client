@@ -118,7 +118,7 @@ jobs:
             <key>API_KEY</key><string>dummy</string>
             <key>GCM_SENDER_ID</key><string>dummy</string>
             <key>PLIST_VERSION</key><string>1</string>
-            <key>BUNDLE_ID</key><string>io.netbird.app.tv</string>
+            <key>BUNDLE_ID</key><string>io.netbird-awg.client.tv</string>
             <key>PROJECT_ID</key><string>dummy</string>
             <key>STORAGE_BUCKET</key><string>dummy</string>
             <key>IS_ADS_ENABLED</key><false/>
@@ -194,9 +194,9 @@ jobs:
             <true/>
             <key>provisioningProfiles</key>
             <dict>
-              <key>io.netbird.app.tv</key>
+              <key>io.netbird-awg.client.tv</key>
               <string>${TV_APP_PROFILE_NAME}</string>
-              <key>io.netbird.app.tv.extension</key>
+              <key>io.netbird-awg.client.tv.extension</key>
               <string>${TV_EXT_PROFILE_NAME}</string>
             </dict>
           </dict>

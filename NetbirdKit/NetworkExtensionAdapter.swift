@@ -51,7 +51,7 @@ class ConfigSSOListener: NSObject, NetBirdSDKSSOListenerProtocol {
 
 public class NetworkExtensionAdapter: ObservableObject {
 
-    private let logger = Logger(subsystem: "io.netbird.app", category: "NetworkExtensionAdapter")
+    private let logger = Logger(subsystem: "io.netbird-awg.client", category: "NetworkExtensionAdapter")
 
     #if os(tvOS)
     static let defaultManagementURL = "https://api.netbird.io"
@@ -61,10 +61,10 @@ public class NetworkExtensionAdapter: ObservableObject {
     var vpnManager: NETunnelProviderManager?
 
     #if os(tvOS)
-    var extensionID = "io.netbird.app.tv.extension"
+    var extensionID = "io.netbird-awg.client.tv.extension"
     var extensionName = "Netibird-AWG"
     #else
-    var extensionID = "io.netbird.app.NetbirdNetworkExtension"
+    var extensionID = "io.netbird-awg.client.NetbirdNetworkExtension"
     var extensionName = "Netibird-AWG Network Extension"
     #endif
 

@@ -50,7 +50,7 @@ struct FirstLaunchView: View {
             if let range = result.range(of: "Change server") {
                 result[range].foregroundColor = .orange
                 result[range].font = .system(size: 17, weight: .semibold)
-                result[range].link = URL(string: "netbird://changeserver")
+                result[range].link = URL(string: "netibird-awg://changeserver")
             }
             return result
         }()
