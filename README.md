@@ -34,9 +34,9 @@
 
  <br>
 
-# Netbird-AWG iOS & tvOS Client
+# NetBird-AWG iOS & tvOS Client
 
-The Netbird-AWG iOS/tvOS client supports NetBird networks that automatically
+The NetBird-AWG iOS/tvOS client supports NetBird networks that automatically
 negotiate standard WireGuard or Hybrid AmneziaWG per peer. It falls back to
 standard WireGuard when the remote peer does not support AWG.
 
@@ -106,7 +106,7 @@ Build the XCFramework for iOS:
 ```
 
 The installed iOS/tvOS application display name and release archive name use
-`Netbird-AWG`.
+`NetBird-AWG`.
 
 Or for tvOS (includes iOS, iOS Simulator, tvOS, and tvOS Simulator targets):
 ```bash

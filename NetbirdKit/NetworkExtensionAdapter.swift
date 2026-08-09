@@ -62,10 +62,10 @@ public class NetworkExtensionAdapter: ObservableObject {
 
     #if os(tvOS)
     var extensionID = "io.netbird.awg.client.tv.extension"
-    var extensionName = "Netbird-AWG"
+    var extensionName = "NetBird-AWG"
     #else
     var extensionID = "io.netbird.awg.client.NetbirdNetworkExtension"
-    var extensionName = "Netbird-AWG Network Extension"
+    var extensionName = "NetBird-AWG Network Extension"
     #endif
 
     let decoder = PropertyListDecoder()

@@ -4,19 +4,19 @@ import WidgetKit
 
 @available(iOS 16.0, *)
 struct DisconnectVPNIntent: AppIntent {
-    static var title: LocalizedStringResource = "Disconnect Netbird-AWG VPN"
-    static var description: IntentDescription = "Disconnect from the Netbird-AWG VPN network."
+    static var title: LocalizedStringResource = "Disconnect NetBird-AWG VPN"
+    static var description: IntentDescription = "Disconnect from the NetBird-AWG VPN network."
     static var openAppWhenRun: Bool = false
 
     func perform() async throws -> some IntentResult & ProvidesDialog {
         guard let manager = try await VPNIntentHelpers.loadManager() else {
             WidgetCenter.shared.reloadAllTimelines()
-            return .result(dialog: "Netbird-AWG VPN is not configured.")
+            return .result(dialog: "NetBird-AWG VPN is not configured.")
         }
 
         let status = manager.connection.status
         guard status == .connected || status == .connecting else {
-            return .result(dialog: "Netbird-AWG VPN is already disconnected.")
+            return .result(dialog: "NetBird-AWG VPN is already disconnected.")
         }
 
         VPNIntentHelpers.defaults?.set(WidgetVPNStatus.disconnecting.rawValue, forKey: WidgetConstants.keyVPNStatus)
@@ -26,9 +26,9 @@ struct DisconnectVPNIntent: AppIntent {
 
         let final = await VPNIntentHelpers.waitForStableState(manager: manager)
         if final == .disconnected {
-            return .result(dialog: "Netbird-AWG VPN disconnected.")
+            return .result(dialog: "NetBird-AWG VPN disconnected.")
         } else {
-            return .result(dialog: "Netbird-AWG VPN failed to disconnect.")
+            return .result(dialog: "NetBird-AWG VPN failed to disconnect.")
         }
     }
 }

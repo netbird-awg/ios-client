@@ -36,7 +36,7 @@ struct TVSettingsView: View {
                             TVSettingsRow(
                                 icon: "server.rack",
                                 title: "Change Server",
-                                subtitle: "Switch to a different Netbird-AWG server",
+                                subtitle: "Switch to a different NetBird-AWG server",
                                 action: { viewModel.showChangeServerAlert = true }
                             )
                         }

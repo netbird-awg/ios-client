@@ -177,7 +177,7 @@ jobs:
       - name: Package unsigned iOS app
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
-          APP="$RUNNER_TEMP/DerivedData-ios/Build/Products/Debug-iphoneos/Netbird-AWG.app"
+          APP="$RUNNER_TEMP/DerivedData-ios/Build/Products/Debug-iphoneos/NetBird-AWG.app"
           test -d "$APP"
           ditto -c -k --sequesterRsrc --keepParent \
             "$APP" \
@@ -337,7 +337,7 @@ jobs:
       - name: Package unsigned tvOS app
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
-          APP="$RUNNER_TEMP/DerivedData-tvos/Build/Products/Debug-appletvos/Netbird-AWG.app"
+          APP="$RUNNER_TEMP/DerivedData-tvos/Build/Products/Debug-appletvos/NetBird-AWG.app"
           test -d "$APP"
           ditto -c -k --sequesterRsrc --keepParent \
             "$APP" \
@@ -368,7 +368,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
-          name: Netbird-AWG Apple clients ${{ github.ref_name }}
+          name: NetBird-AWG Apple clients ${{ github.ref_name }}
           prerelease: true
           generate_release_notes: true
           body: |

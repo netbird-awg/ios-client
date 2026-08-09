@@ -60,7 +60,7 @@ struct TVServerView: View {
                             .font(.system(size: 48, weight: .bold))
                             .foregroundColor(TVColors.textPrimary)
 
-                        Text("Configure the management server for your Netbird-AWG connection")
+                        Text("Configure the management server for your NetBird-AWG connection")
                             .font(.system(size: 24))
                             .foregroundColor(TVColors.textSecondary)
                     }
@@ -207,7 +207,7 @@ struct TVServerView: View {
                                     .scaledToFit()
                                     .frame(width: 28, height: 28)
 
-                                Text("Use Netbird-AWG")
+                                Text("Use NetBird-AWG")
                                     .font(.system(size: 24))
                             }
                             .foregroundColor(.accentColor)
