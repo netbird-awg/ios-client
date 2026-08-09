@@ -395,7 +395,7 @@ struct TVNoPeersView: View {
                 .font(.system(size: 44, weight: .bold))
                 .foregroundColor(TVColors.textPrimary)
 
-            Text("Connect to Netibird-AWG to see your peers,\nor add devices to your network.")
+            Text("Connect to Netbird-AWG to see your peers,\nor add devices to your network.")
                 .font(.system(size: 32))
                 .foregroundColor(TVColors.textSecondary)
                 .multilineTextAlignment(.center)

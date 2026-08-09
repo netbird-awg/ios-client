@@ -81,7 +81,7 @@ struct iOSMainView: View {
             case .changeServer:
                 return Alert(
                     title: Text("Change server"),
-                    message: Text("Changing server will erase the local config and disconnect this device from the current Netibird-AWG account."),
+                    message: Text("Changing server will erase the local config and disconnect this device from the current Netbird-AWG account."),
                     primaryButton: .destructive(Text("Confirm")) {
                         viewModel.handleServerChanged()
                         viewModel.navigateToServerView = true

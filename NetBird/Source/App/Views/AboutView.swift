@@ -66,7 +66,7 @@ struct AboutView: View {
             Section {
                 HStack {
                     Spacer()
-                    Text("Netibird-AWG \(String(Calendar.current.component(.year, from: Date())))")
+                    Text("Netbird-AWG \(String(Calendar.current.component(.year, from: Date())))")
                         .font(.footnote)
                         .foregroundColor(Color("TextSecondary"))
                     Spacer()

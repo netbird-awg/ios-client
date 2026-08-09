@@ -28,7 +28,7 @@ struct NetBirdWidget: Widget {
                     .padding()
             }
         }
-        .configurationDisplayName("Netibird-AWG VPN")
+        .configurationDisplayName("Netbird-AWG VPN")
         .description("Quick connect or disconnect your VPN.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
