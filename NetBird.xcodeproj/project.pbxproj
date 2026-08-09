@@ -1649,6 +1649,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 0.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird.awg.client";
+				PRODUCT_MODULE_NAME = NetBird;
 				PRODUCT_NAME = "Netibird-AWG";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1696,6 +1697,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 0.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.netbird.awg.client";
+				PRODUCT_MODULE_NAME = NetBird;
 				PRODUCT_NAME = "Netibird-AWG";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
