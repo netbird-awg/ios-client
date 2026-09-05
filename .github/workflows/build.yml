@@ -181,14 +181,14 @@ jobs:
           test -d "$APP"
           ditto -c -k --sequesterRsrc --keepParent \
             "$APP" \
-            "$RUNNER_TEMP/netibird-awg-ios-${GITHUB_REF_NAME}-unsigned.zip"
+            "$RUNNER_TEMP/netbird-awg-ios-${GITHUB_REF_NAME}-unsigned.zip"
 
       - name: Upload unsigned iOS app
         if: startsWith(github.ref, 'refs/tags/v')
         uses: actions/upload-artifact@v4
         with:
-          name: netibird-awg-ios
-          path: ${{ runner.temp }}/netibird-awg-ios-${{ github.ref_name }}-unsigned.zip
+          name: netbird-awg-ios
+          path: ${{ runner.temp }}/netbird-awg-ios-${{ github.ref_name }}-unsigned.zip
           if-no-files-found: error
 
   build_tvos:
@@ -341,14 +341,14 @@ jobs:
           test -d "$APP"
           ditto -c -k --sequesterRsrc --keepParent \
             "$APP" \
-            "$RUNNER_TEMP/netibird-awg-tvos-${GITHUB_REF_NAME}-unsigned.zip"
+            "$RUNNER_TEMP/netbird-awg-tvos-${GITHUB_REF_NAME}-unsigned.zip"
 
       - name: Upload unsigned tvOS app
         if: startsWith(github.ref, 'refs/tags/v')
         uses: actions/upload-artifact@v4
         with:
-          name: netibird-awg-tvos
-          path: ${{ runner.temp }}/netibird-awg-tvos-${{ github.ref_name }}-unsigned.zip
+          name: netbird-awg-tvos
+          path: ${{ runner.temp }}/netbird-awg-tvos-${{ github.ref_name }}-unsigned.zip
           if-no-files-found: error
 
   github_release:
@@ -360,7 +360,7 @@ jobs:
       - name: Download client artifacts
         uses: actions/download-artifact@v4
         with:
-          pattern: netibird-awg-*
+          pattern: netbird-awg-*
           path: release-assets
           merge-multiple: true
 
