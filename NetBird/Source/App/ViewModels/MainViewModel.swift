@@ -882,15 +882,6 @@ class ViewModel: ObservableObject {
         return isMatch
     }
     
-    func printLogContents(from logURL: URL) {
-        do {
-            let logContents = try String(contentsOf: logURL, encoding: .utf8)
-            print(logContents)
-        } catch {
-            print("Failed to read the log file: \(error.localizedDescription)")
-        }
-    }
-
     /// Handles server change completion by stopping the engine and resetting all connection state.
     func handleServerChanged() {
         AppLogger.shared.log("Server changed - stopping engine and resetting state")

@@ -158,7 +158,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             // Clear the extension-local config on logout
             clearLocalConfig(completionHandler: completionHandler)
         default:
-            logger.warning("handleAppMessage: Unknown message: \(string)")
+            logger.warning("handleAppMessage: Unknown message received")
             completionHandler(nil)
         }
     }
@@ -475,7 +475,6 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             onURL: { url, userCode in
                 logger.info("loginTV: onURL callback triggered!")
                 logger.info("loginTV: Received URL and userCode, sending to app")
-                logger.info("loginTV: URL=\(url, privacy: .public), userCode=\(userCode, privacy: .public)")
 
                 urlSentLock.lock()
                 urlSentToApp = true

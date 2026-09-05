@@ -52,13 +52,10 @@ struct SafariView: UIViewControllerRepresentable {
             // follows it, so "http" works as a callback scheme in practice.
             // A proper long-term fix requires the SDK to expose a custom-scheme
             // redirect URI (e.g. "netbird-awg://") for mobile OAuth flows.
-            let completionHandler: ASWebAuthenticationSession.CompletionHandler = { [weak self] callbackURL, error in
+            let completionHandler: ASWebAuthenticationSession.CompletionHandler = { [weak self] _, error in
                 guard let self else { return }
 
                 DispatchQueue.main.async {
-                    if let callbackURL = callbackURL {
-                        print("Auth callback URL: \(callbackURL.absoluteString)")
-                    }
                     if let error = error as? ASWebAuthenticationSessionError,
                        error.code == .canceledLogin {
                         print("User cancelled login")

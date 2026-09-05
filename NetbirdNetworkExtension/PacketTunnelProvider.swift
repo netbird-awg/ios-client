@@ -257,7 +257,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             let anonymize = s.dropFirst("DebugBundle:".count) == "true"
             debugBundle(anonymize: anonymize, completionHandler: completionHandler)
         default:
-            AppLogger.shared.log("Unknown message: \(string)")
+            AppLogger.shared.log("Unknown app message received")
             completionHandler(nil)
         }
     }
