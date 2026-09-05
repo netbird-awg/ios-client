@@ -186,6 +186,8 @@
 		B1A2C3D42F3A000100000001 /* PeerDetailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2C3D32F3A000100000001 /* PeerDetailSheet.swift */; };
 		BB3D4E022F4E5A0200D1E2F3 /* TVPreSharedKeyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D4E012F4E5A0200D1E2F3 /* TVPreSharedKeyButton.swift */; };
 		CC5F6A022F4E5A0300D1E2F3 /* TVQRCodeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5F6A012F4E5A0300D1E2F3 /* TVQRCodeSheet.swift */; };
+		D0A000032F99000000000003 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D0A000012F99000000000001 /* PrivacyInfo.xcprivacy */; };
+		D0A000042F99000000000004 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D0A000022F99000000000002 /* PrivacyInfo.xcprivacy */; };
 		E1A0B0012F5E000100000001 /* EmptyTabPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0B0002F5E000100000001 /* EmptyTabPlaceholder.swift */; };
 		E1B0C0012F60000100000001 /* NetworkWarningBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B0C0002F60000100000001 /* NetworkWarningBanner.swift */; };
 		E1C0D0012F72000100000001 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C0D0002F72000100000001 /* AppButton.swift */; };
@@ -374,6 +376,8 @@
 		BB3D4E012F4E5A0200D1E2F3 /* TVPreSharedKeyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVPreSharedKeyButton.swift; sourceTree = "<group>"; };
 		C7A1CFF65CC44187912007EC /* iOSNetworksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSNetworksView.swift; sourceTree = "<group>"; };
 		CC5F6A012F4E5A0300D1E2F3 /* TVQRCodeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVQRCodeSheet.swift; sourceTree = "<group>"; };
+		D0A000012F99000000000001 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		D0A000022F99000000000002 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		E1A0B0002F5E000100000001 /* EmptyTabPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTabPlaceholder.swift; sourceTree = "<group>"; };
 		E1B0C0002F60000100000001 /* NetworkWarningBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWarningBanner.swift; sourceTree = "<group>"; };
 		E1C0D0002F72000100000001 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
@@ -536,6 +540,7 @@
 		50245A552A80431C0034792B /* NetbirdNetworkExtension */ = {
 			isa = PBXGroup;
 			children = (
+				D0A000022F99000000000002 /* PrivacyInfo.xcprivacy */,
 				50C727EB2A824812006E898D /* NetBirdAdapter.swift */,
 				50245A562A80431C0034792B /* PacketTunnelProvider.swift */,
 				50245A582A80431C0034792B /* Info.plist */,
@@ -593,6 +598,7 @@
 		50A891192A792A15007C48FC /* NetBird */ = {
 			isa = PBXGroup;
 			children = (
+				D0A000012F99000000000001 /* PrivacyInfo.xcprivacy */,
 				558553F82FE34913004FB58D /* Fonts */,
 				50245A3B2A7FD1CD0034792B /* Info.plist */,
 				50245A1B2A7BCF120034792B /* NetBird.entitlements */,
@@ -955,6 +961,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A000042F99000000000004 /* PrivacyInfo.xcprivacy in Resources */,
 				501B0DCE2AE04DDE004BE7A7 /* button-disconnecting.json in Resources */,
 				501B0DD22AE04DDE004BE7A7 /* logo_NetBird.json in Resources */,
 				5573F6F12F9F523D00E63A73 /* GoogleService-Info.plist in Resources */,
@@ -971,6 +978,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A000032F99000000000003 /* PrivacyInfo.xcprivacy in Resources */,
 				506332002AF9197700BC8F0E /* button-full2-dark.json in Resources */,
 				501B0DD52AE04DDE004BE7A7 /* button-start-connecting.json in Resources */,
 				50A8911F2A792A16007C48FC /* Assets.xcassets in Resources */,

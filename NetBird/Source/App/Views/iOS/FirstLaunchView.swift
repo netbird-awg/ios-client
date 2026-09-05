@@ -18,52 +18,55 @@ struct FirstLaunchView: View {
             Color("BgPrimary")
                 .ignoresSafeArea()
 
-            VStack(spacing: 32) {
-                Spacer()
+            ScrollView {
+                VStack(spacing: 24) {
+                    Image("onboarding")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: 180)
 
-                Image("onboarding")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: 200)
+                    onboardingText
 
-                onboardingText
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 32)
-
-                AppButton("Continue") {
-                    hasCompletedOnboarding = true
+                    AppButton("Continue") {
+                        hasCompletedOnboarding = true
+                    }
                 }
-                .padding(.horizontal, 32)
-
-                Spacer()
+                .frame(maxWidth: .infinity)
+                .padding(32)
             }
         }
     }
 
     private var onboardingText: some View {
-        let attributed: AttributedString = {
-            let fullText = "By default you will connect to the configured NetBird-AWG server. Visit Change Server to use another server."
-            var result = AttributedString(fullText)
-            result.font = .system(size: 17)
-            result.foregroundColor = Color("TextPrimary")
+        VStack(spacing: 12) {
+            Text("Before you connect")
+                .font(.headline)
+                .foregroundColor(Color("TextPrimary"))
 
-            if let range = result.range(of: "Change server") {
-                result[range].foregroundColor = .orange
-                result[range].font = .system(size: 17, weight: .semibold)
-                result[range].link = URL(string: "netibird-awg://changeserver")
+            Text(
+                "NetBird-AWG exchanges your sign-in identifier, device name, network " +
+                "addresses, routes, peer metadata, and connection diagnostics with the " +
+                "management, signal, and relay services selected by your organization. " +
+                "This information is used only to authenticate your device and provide, " +
+                "secure, and troubleshoot the VPN. It is not sold or used for advertising. " +
+                "Debug bundles remain on this device unless you choose to share them."
+            )
+            .font(.subheadline)
+            .foregroundColor(Color("TextSecondary"))
+
+            Text("The configured NetBird-AWG server is used by default.")
+                .font(.subheadline)
+                .foregroundColor(Color("TextPrimary"))
+
+            Button("Change server") {
+                hasCompletedOnboarding = true
+                onChangeServer()
             }
-            return result
-        }()
-
-        return Text(attributed)
-            .environment(\.openURL, OpenURLAction { url in
-                if url.scheme == "netbird" {
-                    hasCompletedOnboarding = true
-                    onChangeServer()
-                    return .handled
-                }
-                return .systemAction
-            })
+            .font(.subheadline.weight(.semibold))
+            .foregroundColor(.orange)
+            .accessibilityHint("Opens the management server settings")
+        }
+        .multilineTextAlignment(.center)
     }
 }
 
