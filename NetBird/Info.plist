@@ -14,7 +14,7 @@
 			<string>io.netbird.awg.client</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>netibird-awg</string>
+				<string>netbird-awg</string>
 			</array>
 		</dict>
 	</array>
